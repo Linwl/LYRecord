@@ -1,11 +1,8 @@
-from flask import Flask
+from Bussiness import create_app
+import argparse
 
-app = Flask(__name__)
+app = create_app()
 
-
-@app.route('/')
-def hello_world():
-    return 'Hello World!'
 
 
 if __name__ == '__main__':
