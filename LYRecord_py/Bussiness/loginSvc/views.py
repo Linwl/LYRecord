@@ -6,17 +6,17 @@
 @version: ??
 @author: linwl
 @file: views.py
-@time: 2018/12/18 10:53
+@time: 2018/12/18 15:11
 @function：
 """
-
-from .import userSvc
+from .import loginSvc
 from Bussiness import log
+from flask import render_template
 
-@userSvc.route('/UserSvc/', methods=['GET'])
-def query_alarmrec():
+@loginSvc.route('/', methods=['GET'])
+def login():
     try:
-        return '测试'
+        return render_template('index.html')
     except Exception as e:
         error_msg = '请求查询告警记录异常:{0}!'.format(e)
         log.error(error_msg)

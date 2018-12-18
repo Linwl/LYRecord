@@ -22,5 +22,7 @@ def create_app():
     """
     app = Flask(__name__)
     from .userSvc import userSvc as userSvc_blueprint
+    from .loginSvc import loginSvc as loginSvc_blueprint
     app.register_blueprint(userSvc_blueprint)
+    app.register_blueprint(loginSvc_blueprint)
     return app
