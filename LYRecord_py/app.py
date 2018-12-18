@@ -3,8 +3,6 @@ import argparse
 
 app = create_app()
 
-
-
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='start the web service!')
     parser.add_argument('--host', '-i',default='0.0.0.0',type=str, help='input web ip address')

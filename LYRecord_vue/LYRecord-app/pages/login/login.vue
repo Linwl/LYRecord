@@ -2,8 +2,8 @@
     <view class="content">
         <view class="input-group">
             <view class="input-row border">
-                <text class="title">账号：</text>
-                <input type="text" v-model="account" placeholder="请输入账号">
+                <text class="title">手机号：</text>
+                <input type="text" v-model="account" placeholder="请输入手机号">
             </view>
             <view class="input-row">
                 <text class="title">密码：</text>

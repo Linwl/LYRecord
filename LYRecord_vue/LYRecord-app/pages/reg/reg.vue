@@ -9,10 +9,6 @@
                 <text class="title">密码：</text>
                 <input type="text" password="true" v-model="password" placeholder="请输入密码">
             </view>
-            <view class="input-row">
-                <text class="title">邮箱：</text>
-                <input type="text" v-model="email" placeholder="请输入邮箱">
-            </view>
         </view>
         <view class="btn-row">
             <button type="primary" class="primary" @tap="register">注册</button>
@@ -28,7 +24,7 @@
             return {
                 account: '',
                 password: '',
-                email: ''
+				reg_url :''
             }
         },
         methods: {
@@ -37,10 +33,10 @@
                  * 客户端对账号信息进行一些必要的校验。
                  * 实际开发中，根据业务需要进行处理，这里仅做示例。
                  */
-                if (this.account.length < 5) {
+                if (this.account.length == 11) {
                     uni.showToast({
                         icon: 'none',
-                        title: '账号最短为 5 个字符'
+                        title: '请输入手机号码!'
                     });
                     return;
                 }
@@ -51,20 +47,14 @@
                     });
                     return;
                 }
-                if (this.email.length < 3 || !~this.email.indexOf('@')) {
-                    uni.showToast({
-                        icon: 'none',
-                        title: '邮箱地址不合法'
-                    });
-                    return;
-                }
+               
 
                 const data = {
                     account: this.account,
                     password: this.password,
-                    email: this.email
                 }
-                service.addUser(data);
+				let url = ''
+                service.httpRequest(,);
                 uni.showToast({
                     title: '注册成功'
                 });

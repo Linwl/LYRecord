@@ -1,7 +1,7 @@
 {
     "name" : "LYRecord-app",
     "appid" : "__UNI__09D8620",
-    "description": "登录模板",
+    "description": "随心记",
     "versionName": "1.0.0",
     "versionCode": "100",
     "app-plus": { /* 5+App特有相关 */
@@ -30,5 +30,8 @@
 		"router":{
 			"base":"/html5/"
 		}
+	},
+	"networkTimeout":{
+		"request":60000
 	}
 }
