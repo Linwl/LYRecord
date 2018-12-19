@@ -54,13 +54,13 @@
                     password: this.password,
                 }
 				let url = ''
-                service.httpRequest(,);
-                uni.showToast({
-                    title: '注册成功'
-                });
-                uni.navigateBack({
-                    delta: 1
-                });
+//                 service.httpRequest(,);
+//                 uni.showToast({
+//                     title: '注册成功'
+//                 });
+//                 uni.navigateBack({
+//                     delta: 1
+//                 });
             }
         }
     }
