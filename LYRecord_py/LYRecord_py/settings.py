@@ -77,10 +77,14 @@ WSGI_APPLICATION = 'LYRecord_py.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': None,
+        'NAME': None,
     }
 }
+from mongoengine import connect
+connect('LYRecord', host='47.107.138.101', port=27017,username='linwl',password='linwl', alias='default')
 
 
 # Password validation
