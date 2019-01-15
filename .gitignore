@@ -4,9 +4,5 @@
 *.spec
 *.zip
 dist/
-build/
 apidoc/
 templates/
-static/
-Debug/
-Release/
