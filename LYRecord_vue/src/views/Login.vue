@@ -6,6 +6,7 @@
     </div>
     <group title="cell demo">
       <cell title="VUX" value="cool" is-link></cell>
+      <divider>我是有底线的</divider>
     </group>
   </div>
 </template>
