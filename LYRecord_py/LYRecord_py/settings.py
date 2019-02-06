@@ -25,7 +25,7 @@ SECRET_KEY = 'x(-vw=kyjuw*_p*mxkxd8)vg=7xigkcp3!5)c-nok7f2&jiw^2'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['172.18.111.104','47.107.138.101']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -56,7 +56,7 @@ ROOT_URLCONF = 'LYRecord_py.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')]
+        'DIRS': ['LYRecord/dist']
         ,
         'APP_DIRS': True,
         'OPTIONS': {
@@ -121,3 +121,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS=[
+    os.path.join(BASE_DIR,'LYRecord/dist/static')
+]
