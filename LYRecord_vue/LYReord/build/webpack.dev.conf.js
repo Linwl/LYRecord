@@ -61,7 +61,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       filename: 'index.html',
       template: 'index.html',
       inject: true,
-      favicon: resolve('favicon.ico'),
+      favicon: path.resolve('favicon.ico'),
       title: 'LYReord'
     }),
     // copy custom static assets
