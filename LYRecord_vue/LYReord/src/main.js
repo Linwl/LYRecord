@@ -8,6 +8,7 @@ import {
   Tabbar,
   TabItem,
   Toast,
+  Header
 }
 from 'mint-ui'
 import 'mint-ui/lib/style.css'
@@ -15,7 +16,8 @@ import '@/permission' // permission control
 
 Vue.component(Tabbar.name, Tabbar);
 Vue.component(TabItem.name, TabItem);
-Vue.component(Toast.name, Toast)
+Vue.component(Toast.name, Toast);
+Vue.component(Header.name, Header);
 
 Vue.config.productionTip = false
 
