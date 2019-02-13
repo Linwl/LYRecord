@@ -1,12 +1,10 @@
 import axios from 'axios'
 import {
-  Message,
-  MessageBox
-} from 'element-ui'
+  Toast,
+  Indicator
+}
+from 'mint-ui'
 import store from '../store'
-import {
-  getToken
-} from '@/utils/auth'
 
 // 创建axios实例
 const service = axios.create({
@@ -18,9 +16,13 @@ const service = axios.create({
 // request拦截器
 service.interceptors.request.use(
   config => {
+    Indicator.open({
+      text: '请求中...',
+      spinnerType: 'fading-circle'
+    });
     config.headers['Content-Type'] = 'application/json'
     if (store.getters.token) {
-      config.headers['APIToken'] = getToken() // 让每个请求携带自定义token 请根据实际情况自行修改
+      config.headers['APIToken'] = 'test';
     }
     return config
   },
@@ -34,18 +36,17 @@ service.interceptors.request.use(
 // response 拦截器
 service.interceptors.response.use(
   response => {
-    /**
-     * code为非0是抛错
-     */
+    Indicator.close();
     return response.data
   },
   error => {
     console.log('err' + error) // for debug
-    Message({
+    Toast({
       message: error.message,
-      type: 'error',
-      duration: 5 * 1000
-    })
+      iconClass: 'icon icon-success',
+      duration: 5000
+    });
+    Indicator.close();
     return Promise.reject(error)
   }
 )

@@ -3,7 +3,6 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import {} from 'mint-ui'
 import {
   Tabbar,
   TabItem,
@@ -12,12 +11,15 @@ import {
 }
 from 'mint-ui'
 import 'mint-ui/lib/style.css'
-import '@/permission' // permission control
+import '@/permission'
+import store from './store'
+import axios from '@/utils/request'
 
 Vue.component(Tabbar.name, Tabbar);
 Vue.component(TabItem.name, TabItem);
 Vue.component(Toast.name, Toast);
 Vue.component(Header.name, Header);
+Vue.prototype.$http = axios;
 
 Vue.config.productionTip = false
 
@@ -25,6 +27,7 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
+  store,
   components: {
     App
   },
