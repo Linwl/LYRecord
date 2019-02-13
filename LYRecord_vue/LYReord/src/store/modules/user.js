@@ -4,13 +4,16 @@ import {
 
 const user = {
   state: {
-    token: getToken(),
-    name: getUser(),
-    avatar: '',
-    views: getViews(),
+    token: '',
+    name: '',
   },
   mutations: {
-
+    SET_TOKEN: (state, token) => {
+      state.token = token
+    },
+    SET_NAME: (state, name) => {
+      state.name = name
+    },
   },
   actions: {
     /**
@@ -27,6 +30,8 @@ const user = {
       const username = userInfo.username.trim()
       return new Promise((resolve, reject) => {
         login(username, userInfo.password).then(response => {
+          commit('SET_TOKEN', response.Param)
+          commit('SET_NAME', user.NickName)
           resolve()
         }).catch(error => {
           reject(error)
@@ -36,4 +41,4 @@ const user = {
   }
 }
 
-export default user
+export default user;
