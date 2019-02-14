@@ -7,7 +7,8 @@ import {
   Tabbar,
   TabItem,
   Toast,
-  Header
+  Header,
+  Button
 }
 from 'mint-ui'
 import 'mint-ui/lib/style.css'
@@ -19,6 +20,7 @@ Vue.component(Tabbar.name, Tabbar);
 Vue.component(TabItem.name, TabItem);
 Vue.component(Toast.name, Toast);
 Vue.component(Header.name, Header);
+Vue.component(Button.name, Button);
 Vue.prototype.$http = axios;
 
 Vue.config.productionTip = false
