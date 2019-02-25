@@ -8,6 +8,7 @@ import {
   TabItem,
   Toast,
   Header,
+  MessageBox,
   Button
 }
 from 'mint-ui'
@@ -15,14 +16,16 @@ import 'mint-ui/lib/style.css'
 import '@/permission'
 import store from './store'
 import axios from '@/utils/request'
+import Plugins from '@/Plugin/Plugins'
 
 Vue.component(Tabbar.name, Tabbar);
 Vue.component(TabItem.name, TabItem);
+Vue.component(MessageBox.name, MessageBox);
 Vue.component(Toast.name, Toast);
 Vue.component(Header.name, Header);
 Vue.component(Button.name, Button);
 Vue.prototype.$http = axios;
-
+Vue.use(Plugins)
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

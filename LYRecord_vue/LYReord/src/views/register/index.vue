@@ -17,7 +17,7 @@
       <mt-field label="密码"
                 placeholder="请输入密码"
                 type="password"></mt-field>
-      <div>
+      <div class="protocol">
         <mt-checklist align="left"
                       :value.sync="value"
                       :options="['同意注册协议']">
@@ -25,8 +25,12 @@
       </div>
 
     </section>
-    <mt-button size="large"
-               type="primary">注册</mt-button>
+    <div>
+      <mt-button size="large"
+                 type="primary"
+                 @click.native="registerEvent">注册</mt-button>
+    </div>
+
   </div>
 </template>
 
@@ -43,5 +47,21 @@ export default {
     'mt-field': Field,
     'mt-checklist': Checklist
   },
+  methods: {
+    /**
+     * 注册事件
+     */
+    registerEvent () {
+
+    }
+  }
 }
 </script>
+
+<style scoped>
+.protocol {
+  float: left;
+  @include sc(0.6rem, #3b95e9): ;
+  margin-right: 0.3rem;
+}
+</style>
